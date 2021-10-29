@@ -1,0 +1,6 @@
+/node_modules
+/.vscode
+.eslintrc.json
+.DS_Store
+.prettierrc
+.env
