@@ -1,0 +1,30 @@
+<div class="container expense-new-form mt-5">
+  <label class="" for="name">*必填欄位:</label>
+  <h1 class="text-center">請輸入你的支出</h1>
+  <form action="/expenses" method="POST">
+    <div class="form-group">
+      <label for="name">*名稱:</label>
+      <input type="text" class="form-control d-block" id="name" name="name" placeholder="輸入名稱" required />
+    </div>
+    <div class="form-group">
+      <label for="date">*日期:</label>
+      <input type="date" class="form-control" id="date" name="date" placeholder="輸入日期" required />
+    </div>
+    <div class="form-group">
+      <label for="category" class="form-label">類別</label>
+      <input class="form-control" list="categoryOptions" id="category" name="category" placeholder="輸入類別" required />
+      <datalist id="categoryOptions">
+        {{! todo: 改為讀取資料庫字串  }}
+        <option value="家居物業"></option>
+        <option value="交通出行"></option>
+        <option value="休閒娛樂"></option>
+        <option value="餐飲食品"></option>
+        <option value="其他"></option>
+      </datalist>
+    </div>
+    <div class="form-group">
+      <label for="amount">*金額:</label>
+      <input type="number" class="form-control" id="amount" name="amount" placeholder="輸入金額" required />
+    </div>
+  </form>
+</div>
