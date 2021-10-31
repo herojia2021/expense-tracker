@@ -1,4 +1,4 @@
-<div class="container expense-new-form mt-5">
+<div class="container page-contain mt-5">
   <label class="" for="name">*必填欄位:</label>
   <h1 class="text-center">請輸入你的支出</h1>
   <form action="/expenses" method="POST">
@@ -14,7 +14,7 @@
       <label for="category" class="form-label">類別</label>
       <input class="form-control" list="categoryOptions" id="category" name="category" placeholder="輸入類別" required />
       <datalist id="categoryOptions">
-        {{! todo: 改為讀取資料庫字串  }}
+        {{! todo: 改為讀取資料庫字串, 改用select  }}
         <option value="家居物業"></option>
         <option value="交通出行"></option>
         <option value="休閒娛樂"></option>

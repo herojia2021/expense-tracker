@@ -1,6 +1,7 @@
 const express = require("express")
 const exphbs = require("express-handlebars")
 const bodyParser = require("body-parser")
+//setup mongoose must before route, because of initialize mongoose-auto-increment
 require("./config/mongoose")
 const routes = require("./routes")
 
