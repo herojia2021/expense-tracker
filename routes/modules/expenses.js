@@ -8,6 +8,16 @@ router.get("/new", (req, res) => {
   return res.render("new")
 })
 
+// route: 編輯餐廳頁面
+router.get("/:id/edit", (req, res) => {
+  return res.render("edit")
+  const id = req.params.id
+  return Restaurant.findById(id)
+    .lean()
+    .then((restaurant) => res.render("edit", { restaurant }))
+    .catch((error) => console.log(error))
+})
+
 // route: 新增餐廳API
 router.post("/", (req, res) => {
   const userId = req.user._id
