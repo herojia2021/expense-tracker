@@ -20,8 +20,8 @@ router.get("/:id/edit", (req, res) => {
 
 // route: 新增餐廳API
 router.post("/", (req, res) => {
-  const userId = req.user._id
-  return Restaurant.create({ ...req.body, userId })
+  const userId = 1
+  return Expense.create({ ...req.body, userId })
     .then(() => res.redirect("/"))
     .catch((error) => console.log(error))
 })

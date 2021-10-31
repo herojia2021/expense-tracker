@@ -3,6 +3,8 @@ const Expense = require("../expense")
 const User = require("../user")
 const Category = require("../category")
 
+const expenseData = require("./expenses.json")
+
 db.once("open", () => {
   for (let i = 0; i < 10; i++) {
     Category.create({ name: "name-" + i })

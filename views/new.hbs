@@ -11,16 +11,14 @@
       <input type="date" class="form-control" id="date" name="date" placeholder="輸入日期" required />
     </div>
     <div class="form-group">
-      <label for="category" class="form-label">類別</label>
-      <input class="form-control" list="categoryOptions" id="category" name="category" placeholder="輸入類別" required />
-      <datalist id="categoryOptions">
-        {{! todo: 改為讀取資料庫字串, 改用select  }}
-        <option value="家居物業"></option>
-        <option value="交通出行"></option>
-        <option value="休閒娛樂"></option>
-        <option value="餐飲食品"></option>
-        <option value="其他"></option>
-      </datalist>
+      <label for="categoryId" class="form-label">*類別</label>
+      <select class="custom-select form-control" id="categoryId" name="categoryId" placeholder="輸入類別" required>
+        <option value="1">家居物業</option>
+        <option value="2">交通出行</option>
+        <option value="3">休閒娛樂</option>
+        <option value="4">餐飲食品</option>
+        <option value="5">其他</option>
+      </select>
     </div>
     <div class="form-group">
       <label for="amount">*金額:</label>
