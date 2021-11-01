@@ -14,10 +14,11 @@ router.get("/new", (req, res) => {
 
 // route: 編輯頁面
 router.get("/:id/edit", (req, res) => {
+  const userId = req.user.id
   const id = Number(req.params.id)
   Promise.all([
     (function getExpenses() {
-      return Expense.findOne({ id }).lean()
+      return Expense.findOne({ id, userId }).lean()
     })(),
     (function getCategories() {
       return Category.find().lean().sort({ id: "asc" })
@@ -31,7 +32,7 @@ router.get("/:id/edit", (req, res) => {
 
 // route: 新增API
 router.post("/", (req, res) => {
-  const userId = 1
+  const userId = req.user.id
   return Expense.create({ ...req.body, userId })
     .then(() => res.redirect("/"))
     .catch((error) => console.log(error))
@@ -39,8 +40,9 @@ router.post("/", (req, res) => {
 
 // route: 編輯API
 router.put("/:id", (req, res) => {
+  const userId = req.user.id
   const id = Number(req.params.id)
-  return Expense.findOne({ id })
+  return Expense.findOne({ id, userId })
     .then((expense) => {
       for (const [key, value] of Object.entries(req.body)) {
         expense[key] = value
@@ -53,6 +55,7 @@ router.put("/:id", (req, res) => {
 
 // route: 刪除API
 router.delete("/:id", (req, res) => {
+  const userId = req.user.id
   const id = Number(req.params.id)
   return Expense.findOne({ id })
     .then((expense) => expense.remove())

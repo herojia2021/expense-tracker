@@ -19,10 +19,10 @@ router.get("/", (req, res) => {
   const sort = sortValStr ? { [sortValStr]: true } : { categoryId: true }
 
   // 只顯示登入者的資料
-  //const userId = req.user._id
+  const userId = req.user.id
   Promise.all([
     (function getExpenses() {
-      return Expense.find().lean().sort(queryObj[sortValStr])
+      return Expense.find({ userId }).lean().sort(queryObj[sortValStr])
     })(),
     (function getCategories() {
       return Category.find().lean().sort({ id: "asc" })
