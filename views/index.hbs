@@ -20,8 +20,8 @@
           </div>
           <div class="flex-grow-1"><div>{{this.name}}</div><div>{{presentDate this.date}}</div></div>
           <div class="mr-2">{{this.amount}}$</div>
-          <a class="btn btn-link" href="./expense/1/edit">編輯</a>
-          <form class="" action="./expense/1?_method=DELETE" method="POST" style="margin-block-end:0">
+          <a class="btn btn-link" href="./expenses/{{this.id}}/edit">編輯</a>
+          <form class="" action="./expenses/{{this.id}}?_method=DELETE" method="POST" style="margin-block-end:0">
             <button class="btn btn-link" type="submit">刪除</button>
           </form>
         </div>

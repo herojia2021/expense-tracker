@@ -34,4 +34,13 @@ router.post("/", (req, res) => {
     .catch((error) => console.log(error))
 })
 
+// route: 刪除餐廳API
+router.delete("/:id", (req, res) => {
+  const id = Number(req.params.id)
+  return Expense.findOne({ id })
+    .then((expense) => expense.remove())
+    .then(() => res.redirect("/"))
+    .catch((error) => console.log(error))
+})
+
 module.exports = router

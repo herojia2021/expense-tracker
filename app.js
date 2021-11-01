@@ -1,6 +1,7 @@
 const express = require("express")
 const useHandlebars = require("./config/handlebars")
 const bodyParser = require("body-parser")
+const methodOverride = require("method-override")
 //setup mongoose must before route, because of initialize mongoose-auto-increment
 require("./config/mongoose")
 const routes = require("./routes")
@@ -14,6 +15,8 @@ useHandlebars(app)
 app.use(express.static("public"))
 
 app.use(bodyParser.urlencoded({ extended: true }))
+
+app.use(methodOverride("_method"))
 
 app.use(routes)
 
