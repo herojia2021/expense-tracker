@@ -37,12 +37,6 @@ router.get("/", (req, res) => {
       res.render("index", { expenses: results[0], categories: results[1], sort, uiConfig })
     })
     .catch((error) => console.error(error))
-
-  // return Expense.find()
-  //   .lean()
-  //   .sort(queryObj[sortValStr]) // desc
-  //   .then((expenses) => res.render("index", { expenses, sort, uiConfig }))
-  //   .catch((error) => console.error(error))
 })
 
 module.exports = router

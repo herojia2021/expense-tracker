@@ -16,9 +16,9 @@
       <li class="p-2">
         <div class="d-flex align-items-center">
           <div>
-            <i class="fas {{lookupex ../categories this.categoryId "class"}}"></i>
+            <i class="fas {{nestLookUp ../categories this.categoryId "class"}}"></i>
           </div>
-          <div class="flex-grow-1"><div>{{this.name}}</div><div>{{presentDate this.date}}</div></div>
+          <div class="flex-grow-1"><div>{{this.name}}</div><div>{{formatDate this.date "/"}}</div></div>
           <div class="mr-2">{{this.amount}}$</div>
           <a class="btn btn-link" href="./expenses/{{this.id}}/edit">編輯</a>
           <form class="" action="./expenses/{{this.id}}?_method=DELETE" method="POST" style="margin-block-end:0">
