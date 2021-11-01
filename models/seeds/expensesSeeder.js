@@ -15,7 +15,7 @@ db.once("open", () => {
           User.create({
             name: userObj.name,
             email: userObj.email,
-            password: hash,
+            password: userObj.password, //hash todo: login password 驗証目前還是明碼
           })
         )
         .then((user) => {
