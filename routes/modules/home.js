@@ -7,7 +7,7 @@ const Category = require("../../models/category")
 // route: 所有支出清單
 router.get("/", (req, res) => {
   // 取得排序選項
-  const sortValStr = req.query.sort //"categoryId", "date", "amount"
+  const sortValStr = req.query.sort || "categoryId" //"categoryId", "date", "amount"
   // 排序選項對應查詢
   const queryObj = {
     categoryId: { categoryId: "asc" },

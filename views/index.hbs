@@ -1,11 +1,14 @@
 <div class="container page-contain mt-5">
-  <div class="input-group">
-    <select class="custom-select custom-select-lg" name="sort" id="sort-combo" onchange="sort-form.submit()">
-      <option value="categoryId" {{#if sort.categoryId}}selected{{/if}}>類別</option>
-      <option value="date" {{#if sort.date}}selected{{/if}}>日期</option>
-      <option value="amount" {{#if sort.amount}}selected{{/if}}>金額</option>
-    </select>
-  </div>
+  <form action="/" method="GET" id="sort-form">
+    <div class="input-group">
+      <select class="custom-select custom-select-lg" name="sort" id="sort-combo" onchange="sort-form.submit()">
+        <option value="categoryId" {{#if sort.categoryId}}selected{{/if}}>類別</option>
+        <option value="date" {{#if sort.date}}selected{{/if}}>日期</option>
+        <option value="amount" {{#if sort.amount}}selected{{/if}}>金額</option>
+      </select>
+    </div>
+  </form>
+
   <div class="mt-3">
     <h3>總金額:</h3>
     <div class="index-total-amount text-right pr-1">{{sumOfAmount expenses}}</div>
