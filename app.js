@@ -1,4 +1,5 @@
 const express = require("express")
+const session = require("express-session")
 const useHandlebars = require("./config/handlebars")
 const bodyParser = require("body-parser")
 const methodOverride = require("method-override")
@@ -13,6 +14,14 @@ useHandlebars(app)
 
 // setup static-file path
 app.use(express.static("public"))
+
+app.use(
+  session({
+    secret: "ThisIsMySecret",
+    resave: false,
+    saveUninitialized: true,
+  })
+)
 
 app.use(bodyParser.urlencoded({ extended: true }))
 
