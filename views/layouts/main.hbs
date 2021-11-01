@@ -15,9 +15,13 @@
         <div class="container">
           <a class="navbar-brand" href="/">
             <i class="fas fa-comment-dollar"></i>
-            家庭記帳本
+            {{#if isAuthenticated}}
+              {{user.name}}的記帳本
+            {{else}}
+              家庭記帳本
+            {{/if}}
           </a>
-          {{#if true}}
+          {{#if isAuthenticated}}
             <a href="/users/logout" class="btn btn-outline-Dark">Logout</a>
           {{else}}
             <a href="/users/login" class="btn btn-outline-Dark">Login</a>
