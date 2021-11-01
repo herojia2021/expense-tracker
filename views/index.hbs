@@ -1,73 +1,32 @@
 <div class="container page-contain mt-5">
   <div class="input-group">
-    <select class="custom-select custom-select-sm" name="sort" id="sort-combo" onchange="sort-form.submit()">
-      <option value="a-z">家居物業</option>
-      <option value="z-a">交通出行</option>
-      <option value="category">休閒娛樂</option>
-      <option value="location">餐飲食品</option>
-      <option value="rating">其他</option>
+    <select class="custom-select custom-select-lg" name="sort" id="sort-combo" onchange="sort-form.submit()">
+      <option value="categoryId" {{#if sort.categoryId}}selected{{/if}}>類別</option>
+      <option value="date" {{#if sort.date}}selected{{/if}}>日期</option>
+      <option value="amount" {{#if sort.amount}}selected{{/if}}>金額</option>
     </select>
   </div>
   <div class="mt-3">
     <h3>總金額:</h3>
-    <div class="index-total-amount text-right pr-1">25535</div>
+    <div class="index-total-amount text-right pr-1">{{sumOfAmount expenses}}</div>
   </div>
-
-  <div>
+  <div>    
     <ul class="list-group" id="expense-items">
-      <li>
+      {{#each expenses}}
+      <li class="p-2">
         <div class="d-flex align-items-center">
           <div>
-            <i class="fas fa-home mx-2"></i>
+            <i class="fas {{lookupex ../categories this.categoryId "class"}}"></i>
           </div>
-          <div class="flex-grow-1"><div>午餐</div><div>2019/04/23</div></div>
-          <div class="mr-2">60$</div>
+          <div class="flex-grow-1"><div>{{this.name}}</div><div>{{presentDate this.date}}</div></div>
+          <div class="mr-2">{{this.amount}}$</div>
           <a class="btn btn-link" href="./expense/1/edit">編輯</a>
           <form class="" action="./expense/1?_method=DELETE" method="POST" style="margin-block-end:0">
             <button class="btn btn-link" type="submit">刪除</button>
           </form>
         </div>
       </li>
-      <li>
-        <div class="d-flex align-items-center">
-          <div>
-            <i class="fas fa-home mx-2"></i>
-          </div>
-          <div class="flex-grow-1"><div>午餐</div><div>2019/04/23</div></div>
-          <div class="mr-2">60$</div>
-          <a class="btn btn-link" href="./expense/1/edit">編輯</a>
-          <form class="" action="./expense/1?_method=DELETE" method="POST" style="margin-block-end:0">
-            <button class="btn btn-link" type="submit">刪除</button>
-          </form>
-        </div>
-      </li>
-      <li>
-        <div class="d-flex align-items-center">
-          <div>
-            <i class="fas fa-home mx-2"></i>
-          </div>
-          <div class="flex-grow-1"><div>午餐</div><div>2019/04/23</div></div>
-          <div class="mr-2">60$</div>
-          <a class="btn btn-link" href="./expense/1/edit">編輯</a>
-          <form class="" action="./expense/1?_method=DELETE" method="POST" style="margin-block-end:0">
-            <button class="btn btn-link" type="submit">刪除</button>
-          </form>
-        </div>
-      </li>
-      <li>
-        <div class="d-flex align-items-center">
-          <div>
-            <i class="fas fa-home mx-2"></i>
-          </div>
-          <div class="flex-grow-1"><div>午餐</div><div>2019/04/23</div></div>
-          <div class="mr-2">60$</div>
-          <a class="btn btn-link" href="./expenses/1/edit">編輯</a>
-          <form class="" action="./expense/1?_method=DELETE" method="POST" style="margin-block-end:0">
-            <button class="btn btn-link" type="submit">刪除</button>
-          </form>
-        </div>
-      </li>
-
+      {{/each}}
     </ul>
   </div>
   <div class="text-center mt-3">

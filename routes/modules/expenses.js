@@ -2,15 +2,23 @@ const express = require("express")
 const router = express.Router()
 
 const Expense = require("../../models/expense")
+const Category = require("../../models/category")
 
 // route: 新增餐廳頁面
 router.get("/new", (req, res) => {
-  return res.render("new")
+  Category.find()
+    .lean()
+    .then((categories) => res.render("new", { categories }))
+    .catch((error) => console.error(error))
 })
 
 // route: 編輯餐廳頁面
 router.get("/:id/edit", (req, res) => {
-  return res.render("edit")
+  return Category.find()
+    .lean()
+    .then((categories) => res.render("edit", { categories }))
+    .catch((error) => console.error(error))
+
   const id = req.params.id
   return Restaurant.findById(id)
     .lean()

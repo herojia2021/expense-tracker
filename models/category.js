@@ -7,6 +7,10 @@ const categorySchema = new Schema({
     type: String,
     required: true,
   },
+  class: {
+    type: String,
+    required: true,
+  },
 })
 
 categorySchema.plugin(autoIncrement.plugin, {

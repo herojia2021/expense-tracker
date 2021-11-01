@@ -15,6 +15,8 @@
 #expense-items li i {
   font-size: 40px;
   color: #007eff;
+  width: 60px;
+  text-align: center;
 }
 
 * {

@@ -1,1 +1,9 @@
-{ "categories": [{ "name": "家居物業" }, { "name": "交通出行" }, { "name": "休閒娛樂" }, { "name": "餐飲食品" }, { "name": "其它" }] }
+{
+  "categories": [
+    { "name": "家居物業", "class": "fa-home" },
+    { "name": "交通出行", "class": "fa-shuttle-van" },
+    { "name": "休閒娛樂", "class": "fa-grin-beam" },
+    { "name": "餐飲食品", "class": " fa-utensils" },
+    { "name": "其它", "class": "fa-pen" }
+  ]
+}
