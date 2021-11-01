@@ -14,12 +14,7 @@ router.get("/", (req, res) => {
     date: { date: "asc" },
     amount: { amount: "desc" },
   }
-  // 設定顯示按鈕
-  const uiConfig = {
-    showNew: true, //新增按鈕
-    showSort: true, //排序選項
-    showReturn: false, //返回按鈕
-  }
+
   // 提供boolean資訊給handlebars helper, 設定sort選項
   const sort = sortValStr ? { [sortValStr]: true } : { categoryId: true }
 
@@ -34,7 +29,7 @@ router.get("/", (req, res) => {
     })(),
   ])
     .then((results) => {
-      res.render("index", { expenses: results[0], categories: results[1], sort, uiConfig })
+      res.render("index", { expenses: results[0], categories: results[1], sort })
     })
     .catch((error) => console.error(error))
 })
