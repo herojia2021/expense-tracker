@@ -1,9 +1,9 @@
 {
   "categories": [
-    { "name": "家居物業", "class": "fa-home" },
-    { "name": "交通出行", "class": "fa-shuttle-van" },
-    { "name": "休閒娛樂", "class": "fa-grin-beam" },
-    { "name": "餐飲食品", "class": " fa-utensils" },
-    { "name": "其它", "class": "fa-pen" }
+    { "id": 1, "name": "家居物業", "class": "fa-home" },
+    { "id": 2, "name": "交通出行", "class": "fa-shuttle-van" },
+    { "id": 3, "name": "休閒娛樂", "class": "fa-grin-beam" },
+    { "id": 4, "name": "餐飲食品", "class": " fa-utensils" },
+    { "id": 5, "name": "其它", "class": "fa-pen" }
   ]
 }
