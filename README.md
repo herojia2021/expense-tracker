@@ -18,47 +18,38 @@
 
 ### 安裝
 
-1.在本地目錄 clone repo 或 [download](https://github.com/herojia2021/restaurant-list/archive/refs/heads/master.zip)
+1.在本地目錄 clone repo 或 [download](https://github.com/herojia2021/expense-tracker/archive/refs/heads/master.zip)
 
 ```
 git clone https://github.com/herojia2021/expense-tracker.git
+```
 
 2.安裝相依套件
 
 ```
-
 cd expense-tracker
-
 ```
 
 ```
-
 npm install
-
 ```
 
 3.設定環境變數
 
 ```
-
 ．將.env.example 更名為 .env
-
 ```
 
 4.匯入種子資料
 
 ```
-
 npm run seed
-
 ```
 
 5.開啟程式
 
 ```
-
 npm run start
-
 ```
 
 - 終端顯示 `Express is running on http://localhost:3000` 即啟動完成，
@@ -72,9 +63,12 @@ npm run start
 
 - 使用下載版本 BootStrap 4.x
 - 清除種子資料
+
 ```
 
 npm run clearDB
+
+```
 
 ```
 
