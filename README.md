@@ -65,11 +65,5 @@ npm run start
 - 清除種子資料
 
 ```
-
 npm run clearDB
-
-```
-
-```
-
 ```
