@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 const autoIncrement = require("mongoose-auto-increment")
 
-mongoose.connect("mongodb://localhost/expense-tracker", { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
 
 const db = mongoose.connection
 autoIncrement.initialize(db)

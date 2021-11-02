@@ -4,6 +4,9 @@ const useHandlebars = require("./config/handlebars")
 const bodyParser = require("body-parser")
 const methodOverride = require("method-override")
 const flash = require("connect-flash")
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config()
+}
 
 //setup mongoose must before route, because of initialize mongoose-auto-increment
 require("./config/mongoose")
@@ -11,6 +14,7 @@ const usePassport = require("./config/passport")
 const routes = require("./routes")
 
 const app = express()
+const port = process.env.PORT
 
 // setup handlebars
 useHandlebars(app)
@@ -20,7 +24,7 @@ app.use(express.static("public"))
 
 app.use(
   session({
-    secret: "ThisIsMySecret",
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
   })
@@ -42,6 +46,6 @@ app.use((req, res, next) => {
 
 app.use(routes)
 
-app.listen(3000, () => {
-  console.log("App is running on http://localhost:3000.")
+app.listen(port, () => {
+  console.log(`Express is running on http://localhost:${port}`)
 })
