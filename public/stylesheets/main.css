@@ -8,6 +8,10 @@
   line-height: 1;
 }
 
+#expense-items {
+  list-style-type: none;
+}
+
 #expense-items li:nth-child(odd) {
   background-color: #e6e6e6;
 }
