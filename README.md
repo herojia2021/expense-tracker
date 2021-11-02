@@ -37,7 +37,7 @@ npm install
 3.設定環境變數
 
 ```
-．將.env.example 更名為 .env
+將.env.example 更名為 .env
 ```
 
 4.匯入種子資料
